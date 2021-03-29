@@ -25,7 +25,7 @@
 
 Docker는 컨테이너 기술의 사실상 표준이 되었다. Linux, Windows, Mac OS 등 다양한 운영체제에서 사용 가능하며 애플리케이션에 국한되지 않고 의존 및 파일 시스템까지 패키징하여 빌드, 배포 실행을 단순화하였다.
 
-Linux의 [Namespace](#linux-namespace?)와 cgroups와 같은 커널 기능을 사용하여 가상화가 가능하다.
+Linux의 Namespace와 cgroups와 같은 커널 기능을 사용하여 가상화가 가능하다.
 
 </br>
 
@@ -109,16 +109,16 @@ Scale-out: 기존의 서버와 같은 사양 또는 비슷한 사양의 서버 대수를 증가시키는 방�
 <img src="./image_path/MonolithAndMicroService.png" width="450px" height="300px" title="Monolith and Micro Service" alt="Monolith and Micro Service"></img><br/>
 
 
-> ? 관리  
-Monolith는 애플리케이션 서비스들을 하나로 묶어서 다같이 관리했다.  
+> ### 관리  
+> Monolith는 애플리케이션 서비스들을 하나로 묶어서 다같이 관리했다.  
 하지만 한 번 Compile할 때 많은 시간이 걸린다는 단점이 있다.  
 </br>
 요즘은 Micro Service로 많이 개발한다.  
 개발팀 개별적으로 서비스를 구축할 수 있고 업데이트에 있어서 더 간결하다.  
 또한 각 개별팀별로 원하는 기술, 컨테이너를 사용할 수 있으므로 서로 독립적인 개발이 가능하다.  
 </br>
-? Scaling  
-스케일링 역시 간편하다. Monolith였다면 필요없는 기능까지 다같이 스케일링이 되므로 비효율적이다.  
+> ### Scaling  
+> 스케일링 역시 간편하다. Monolith였다면 필요없는 기능까지 다같이 스케일링이 되므로 비효율적이다.  
 하지만 Micro Service는 스케일링이 필요한 기능만 할 수 있으므로 더 경제적이고 효율적이다.
 
 ---------------------------------------
