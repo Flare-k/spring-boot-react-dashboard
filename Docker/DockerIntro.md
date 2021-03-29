@@ -1,7 +1,6 @@
 # 1.Docker Intro  
-  
-  
-  
+<br/>
+
 ## 1-1. Docker는 왜 필요할까?
  
  Docker는 *컨테이너 기술을 지원하는 다양한 프로젝트 중 하나이다. 컨테이너 기술을 과거에도 존재했으나 Docker를 통해 많이 알려지게 되었다.
@@ -17,10 +16,8 @@
 더 쉽게 말하자면, 호스트 OS위에 컨테이너 관리 소프트웨어를 만들고 그 위에 컨테이너를 올린다.  
 이 컨테이너는 어플리케이션을 작동시키기 위해 필요한 라이브러리, 어플리케이션 등을 모아 별도의 서버처럼 사용 가능하게 만든 것이다.
 ```
-[Google Cloud](https://cloud.google.com/containers?hl=ko)  
-  
-  
 
+<br/><br/>
 
 ## 1-2. Docker
 
@@ -40,18 +37,52 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 컨테이너 : 이미지를 격리하여 독립된 공간에서 실행한 가상 환경
 ```
 <img src="./image_path/cloud.png" width="450px" height="300px" title="Cloud" alt="Cloud"></img><br/>
+<br/><br/>
 
 ## 1-3. Container
 
 기존의 VM 사용방식처럼 Hypervisor 위에 올려 사용한다면 동일 시스템에서 실행하는 소프트웨어의 컴포넌트가 충돌하거나 다양한 종속성을 갖는다.
 
 컨테이너는 가상머신을 사용해 각 Micro Service를 격리(isolate)하는 기술이다. 가상머신처럼 하드웨어를 전부 구현하는 것은 아니기 때문에 매우 빠른 실행이 가능하다.
+<br/><br/>
+
+## 1-4. Container vs. Virtual Machine 
+
+<br/><br/>
+
+## 1-5. 컨테이너를 격리하는 기술
+
+Linux Namespace : 각 프로세스가 파일 시스템 마운트, 네트워크, 유저(uid), 호스트 네임(uts) 등에 대해 시스템에 독립 뷰를 제공한다.  
+  
+Linux Control Group : 프로세스로 소비할 수 있는 리소스 양을 제한한다.  
+(리소스 양 = CPU, Memory, I/O, 네트워크 대역대, Device Node 등..)  
+<br/><br/><br/>
+## 1-6. Docker의 한계
+
+- Docker를 사용해 관리하더라도 쉽지 않은 형태 배포 및 컨테이너 배치 전략 Scale-up, Scale-out이 쉽지 않다.  
+- Docker를 실시간으로 글로벌한 트래픽을 감당할 수 있게 사용하려면 멀티 호스트에 Docker를 사용해야 한다.  
+- 그렇다면 여러 대의 서버에서 컨테이너를 관리한다면 네트워크 상으로도 쉽지 않을 것이다.  
+- 이를 위해 많은 오케스트레이션 제품들이 나오게 됐다. 그 중 하나가 바로 Kubernetes이다.
+```
+Scale-up : 기존의 서버에서 더욱 고성능의 서버로 변경하는 것
+
+> 단점 : 스토리지 컨트롤러의 확장성 한계의 문제, 성능 그리고 용량 확장 제한에 다다른 경우에 새 시스템을 추가해야되는데 이때 발생하는 마이그레이션 비용
+
+￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
+
+Scale-out: 기존의 서버와 같은 사양 또는 비슷한 사양의 서버 대수를 증가시키는 방법으로 처리 능력을 향샹시키는 것
+
+> 단점 : 병렬 컴퓨팅의 설계 및 구현, 기본적으로 직렬화 되어야 할 부분이 존재, 대역폭, 동기화 문제, 코어가 늘어남에 따라 마냥 성능이 증가하지는 않고, 코어 증가에 따라 대역폭은 증가해 지연이 발생할 가능성
+```
 
 
 
 
-
+<br/><br/><br/>
 ---------------------------------------
 
-[재즐보프](http://blog.naver.com/PostView.nhn?blogId=isc0304&logNo=221840483579&categoryNo=99&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postList&userTopListOpen=true&userTopListCount=30&userTopListManageOpen=false&userTopListCurrentPage=1)
+## References
 
+[재즐보프](http://blog.naver.com/PostView.nhn?blogId=isc0304&logNo=221840483579&categoryNo=99&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postList&userTopListOpen=true&userTopListCount=30&userTopListManageOpen=false&userTopListCurrentPage=1)  
+[Scale-in/out 출처: 토마의 개발노트](https://toma0912.tistory.com/87)  
+[Container - Google Cloud](https://cloud.google.com/containers?hl=ko)  
