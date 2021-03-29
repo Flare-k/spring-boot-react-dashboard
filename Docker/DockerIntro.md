@@ -79,6 +79,7 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 <br/><br/>
 
 ## 1-6. Docker의 한계
+> Limit of Docker
 
 - Docker를 사용해 관리하더라도 쉽지 않은 형태 배포 및 컨테이너 배치 전략 Scale-up, Scale-out이 쉽지 않다.  
 - Docker를 실시간으로 글로벌한 트래픽을 감당할 수 있게 사용하려면 멀티 호스트에 Docker를 사용해야 한다.  
