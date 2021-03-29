@@ -1,7 +1,7 @@
 # 1. Docker Intro  
 <br/>
 
-## 1-1. Docker는 왜 필요할까?
+## 1.1 Docker는 왜 필요할까?
  
  Docker는 [컨테이너](#1-3.-container) 기술을 지원하는 다양한 프로젝트 중 하나이다. 컨테이너 기술을 과거에도 존재했으나 Docker를 통해 많이 알려지게 되었다.
 
@@ -21,7 +21,7 @@
  
 <br/><br/>
 
-## 1-2. Docker
+## 1.2 Docker
 
 Docker는 컨테이너 기술의 사실상 표준이 되었다. Linux, Windows, Mac OS 등 다양한 운영체제에서 사용 가능하며 애플리케이션에 국한되지 않고 의존 및 파일 시스템까지 패키징하여 빌드, 배포 실행을 단순화하였다.
 
@@ -44,7 +44,7 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 <img src="./image_path/cloud.png" width="450px" height="300px" title="Cloud" alt="Cloud"></img><br/>
 <br/><br/>
 
-## 1-3. Container
+## 1.3 Container
 > 컨테이너란 (Container)?
 
 컨테이너는 애플리케이션을 실제 구동 환경으로부터 추상화할 수 있는 논리 패키징 매커니즘을 제공한다.  
@@ -57,7 +57,7 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 >컨테이너는 가상머신을 사용해 각 Micro Service를 격리(isolate)하는 기술이다. 가상머신처럼 하드웨어를 전부 구현하는 것은 아니기 때문에 매우 빠른 실행이 가능하다.
 <br/><br/>
 
-## 1-4. Container vs. Virtual Machine 
+## 1.4 Container vs. Virtual Machine 
 
 > 그렇다면 Container와 VM의 성능 차이는 얼마나 날까?
 
@@ -65,7 +65,7 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 
 <br/><br/>
 
-## 1-5. 컨테이너를 격리하는 기술
+## 1.5 컨테이너를 격리하는 기술
 <br/>
 
 * Linux Namespace : 각 프로세스가 파일 시스템 마운트, 네트워크, 유저(uid), 호스트 네임(uts) 등에 대해 시스템에 독립 뷰를 제공한다.  
@@ -78,7 +78,7 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 
 <br/><br/>
 
-## 1-6. Docker의 한계
+## 1.6 Docker의 한계
 > Limit of Docker
 
 - Docker를 사용해 관리하더라도 쉽지 않은 형태 배포 및 컨테이너 배치 전략 Scale-up, Scale-out이 쉽지 않다.  
