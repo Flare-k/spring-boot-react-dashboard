@@ -1,4 +1,4 @@
-# 2. Install Docker  
+# 2. Docker 설치하기 with AWS  
 <br/>
 
 클라우드 환경이 아닌 On-Premise 환경에서 설치하려면 다음의 경로로 설치하면 된다.  
@@ -67,7 +67,10 @@ Virtual Box를 설치하고 다음의 파일을 [다운로드](https://drive.google.com/file/d/
     - <b>.pem key가 없다면 새로운 pem key 생성</b>  
     </br>     
 
-   
+---
+
+</br>
+ 
 2. EC2 인스턴스 접속  
     
     <b>2-1 EC2 인스턴스 상태 확인 </b>  
@@ -91,9 +94,73 @@ Virtual Box를 설치하고 다음의 파일을 [다운로드](https://drive.google.com/file/d/
     $ uname -a
     위 명령어로 올바른 주소인지 확인한다.
     ```
+    </br>
+
+---
+
+</br>
+
+3. Docker 환경 구축  
+
+    <b>3-1 Docker 설치하기</b>  
+    ```
+    $ sudo yum -y upgrade
+    $ sudo yum -y install docker
+    $ sudo docker -v
+    Docker version 19.03.13-ce, build 4484c46
+    ```
+    <img src="./image_path/aws_docker13.png" width="600px" height="100px" title="aws_docker13" alt="aws_docker13"></img>  
+    Docker가 정상적으로 설치되었음을 확인할 수 있다.  
+
+    <b>3-2 Docker 시작하기</b>  
+    ```
+    $ sudo service docker start
+    ```
+
+    <b>3-3 그룹에 사용자 추가</b>  
+    ```
+    $ sudo usermod -aG docker ec2-user
+    ```
+
+    <b>3-4 Docker-compose 설치</b>  
+    ```
+    $ sudo curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    ```
+    <b>Docker-compose의 역할?</b>  
+    만약 똑같은 역할을 하는 여러 개의 컨테이너를 관리한다면 같은 내용의 명령어를 반복해서 입력해야 한다.  
+    하지만 docker compose를 이용하면 명령어 한 번으로 컨테이너 실행이 가능해진다.  
+    보통 docker compose는 docker-compose.yaml 파일로 관리한다.  
+
+    > <b>Docker Compose & Kubernetes</b>  
+     Docker compose의 기능을 보면 Kubernetes와 비슷해 조금은 혼란스러울 수 있다.  
+    <b>.yaml 파일에 정의된 내용으로 컨테이너를 만든다</b>는 기능적 공통점을 갖기 때문이다.  
+    
+    둘의 차이는..  
+    <b>1. Kubernetes</b>  
+    - 쿠버네티스 클러스터 내에서 컨테이너를 생성하고 관리하는 컨테이너 관리 도구  
+    - yaml 파일에 정의된 내용을 바탕으로 쿠버네티스 클러스터 내에서 쿠버네티스 오브젝트를 만들고 컨트롤러를 만든다.  
+
+    <b>2. Docker Compose</b>  
+    - yaml 파일에 정의된 내용을 바탕으로 Host 컴퓨터 내에 컨테이너를 만든다.  
+
+    <b>3-5 실행권한 추가하기</b>  
+    ```
+    $ sudo chmod +x /usr/local/bin/docker-compose
+    ```
+    설치 후에 chmod 명령어를 사용하여 디렉토리에 excute 권한을 추가한다.  
+
+    <b>3-6 설치 확인하기</b>  
+    ```
+    $ sudo docker-compose -v
+    docker-compose version 1.25.0-rc2, build 661ac20e
+    ```
+    
 
 
-3. Docker 환경 구축
+</br>
+
+
+---
 
 
 4. Docker 명령어 확인
