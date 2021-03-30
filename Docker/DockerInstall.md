@@ -44,11 +44,11 @@ Virtual Box를 설치하고 다음의 파일을 [다운로드](https://drive.google.com/file/d/
     <b>1-4 단계 4: 스토리지 추가</b>  
     <img src="./image_path/aws_docker4.png" width="600px" height="300px" title="aws_docker4" alt="aws_docker4"></img>  
     - 스토리지는 Default 값으로 선택
-    - 다음: 태그 추가 클릭
+    - 다음: 태그 추가 클릭  
     </br>  
 
-    <b>1-5 단계 5: 태그 추가 </b> 
-    <img src="./image_path/aws_docker5.png" width="600px" height="300px" title="aws_docker5" alt="aws_docker5"></img>
+    <b>1-5 단계 5: 태그 추가 </b>  
+    <img src="./image_path/aws_docker5.png" width="600px" height="300px" title="aws_docker5" alt="aws_docker5"></img>  
     - Key : Name  
     - Value : Docker_Server (원하는대로 설정 가능) 
     - 다음: 보안 그룹 구성 클릭  
