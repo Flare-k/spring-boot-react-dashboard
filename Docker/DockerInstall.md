@@ -170,21 +170,7 @@ Virtual Box를 설치하고 다음의 파일을 [다운로드](https://drive.google.com/file/d/
     $ sudo docker-compose -v
     docker-compose version 1.25.0-rc2, build 661ac20e
     ```
-    
-
-
-<br/>
-
-
----
-
-
-4. Docker 명령어 확인
-
-
-<br/><br/><br/>
-
----
+ 
 <br/>
 
 [뒤로가기](/Docker/README.md)  
