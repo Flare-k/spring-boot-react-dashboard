@@ -25,6 +25,13 @@
 
     ```
     $ sudo docker pull tomcat
+    Using default tag: latest
+    latest: Pulling from library/tomcat
+    8bf9c589d5f9: Pull complete 
+    4c70e46d8b5f: Pull complete 
+    ea848ad42f0d: Pull complete 
+    ...
+    docker.io/library/tomcat:latest
     ```
 
     <br/>
@@ -33,7 +40,16 @@
 
     ```
     $ sudo docker images
+    REPOSITORY  TAG      IMAGE ID      CREATED      SIZE  
+    tomcat     latest  0ce438e89a29   2 days ago    667MB
     ```
 
     <br/>
 
+<br/>
+
+[뒤로가기](/Docker/README.md)  
+
+<br/>
+
+---
