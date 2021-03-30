@@ -59,7 +59,7 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 
 <br/>
 
-## 1.4 Container vs. Virtual Machine 
+## 1.4 Container vs Virtual Machine 
 
 > 그렇다면 Container와 VM의 성능 차이는 얼마나 날까?
 
@@ -107,7 +107,7 @@ Scale-out: 기존의 서버와 같은 사양 또는 비슷한 사양의 서버 대수를 증가시키는 방�
 <br/><br/>
 
 
-## 1.7 Monolithic vs. Micro Service  
+## 1.7 Monolithic vs Micro Service  
 <img src="./image_path/MonolithAndMicroService.png" width="450px" height="300px" title="Monolith and Micro Service" alt="Monolith and Micro Service"></img><br/>
 
 

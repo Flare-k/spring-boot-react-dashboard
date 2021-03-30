@@ -195,5 +195,5 @@ Virtual Box를 설치하고 다음의 파일을 [다운로드](https://drive.google.com/file/d/
 
 ## References
 
-[재즐보프](https://www.youtube.com/watch?v=OrK3Z1CimuU&list=PLnIaYcDMsSczk-byS2iCDmQCfVU_KHWDk&index=4&ab_channel=%EC%9E%AC%EC%A6%90%EB%B3%B4%ED%94%84)  
+[재즐보프](https://www.youtube.com/channel/UCW_PO0316aD16L3IcD34wPg)  
 

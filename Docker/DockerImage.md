@@ -61,4 +61,4 @@
 
 ## References
 
-[¿Á¡Ò∫∏«¡](https://www.youtube.com/watch?v=OrK3Z1CimuU&list=PLnIaYcDMsSczk-byS2iCDmQCfVU_KHWDk&index=4&ab_channel=%EC%9E%AC%EC%A6%90%EB%B3%B4%ED%94%84)  
+[¿Á¡Ò∫∏«¡](https://www.youtube.com/channel/UCW_PO0316aD16L3IcD34wPg)  
