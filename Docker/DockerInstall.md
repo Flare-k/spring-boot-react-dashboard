@@ -25,47 +25,72 @@ Virtual Box를 설치하고 다음의 파일을 [다운로드](https://drive.google.com/file/d/
 ### 2.1 AWS 환경에서 Docker 설치하기
 
 1. EC2 인스턴스 생성  
-    1-1 단계 1: Amazon Machine Image(AMI) 선택  
+    
+    <b>1-1 단계 1: Amazon Machine Image(AMI) 선택</b>  
     <img src="./image_path/aws_docker1.png" width="600px" height="300px" title="aws_docker1" alt="aws_docker1"></img>
     - <b>Amazon Linux 2 AMI</b> 선택  
     </br>
 
-    1-2 단계 2: 인스턴스 유형 선택  
+    <b>1-2 단계 2: 인스턴스 유형 선택</b>  
     <img src="./image_path/aws_docker2.png" width="600px" height="300px" title="aws_docker2" alt="aws_docker2"></img>
     - VM에서 설정한 사양과 비슷한 <b>t2.large</b> 모델 선택  
     </br>  
 
-    1-3 단계 3: 인스턴스 세부 정보 구성    
+    <b>1-3 단계 3: 인스턴스 세부 정보 구성</b>    
     <img src="./image_path/aws_docker3.png" width="600px" height="300px" title="aws_docker3" alt="aws_docker3"></img>  
     - 퍼블릭 IP 자동 할당 <b>활성화</b> 선택
     </br>  
  
-    1-4 단계 4: 스토리지 추가  
+    <b>1-4 단계 4: 스토리지 추가</b>  
     <img src="./image_path/aws_docker4.png" width="600px" height="300px" title="aws_docker4" alt="aws_docker4"></img>  
     - 스토리지는 Default 값으로 선택
     - 다음: 태그 추가 클릭
     </br>  
 
-    1-5 단계 5: 태그 추가  
+    <b>1-5 단계 5: 태그 추가 </b> 
     <img src="./image_path/aws_docker5.png" width="600px" height="300px" title="aws_docker5" alt="aws_docker5"></img>
     - Key : Name  
     - Value : Docker_Server (원하는대로 설정 가능) 
     - 다음: 보안 그룹 구성 클릭  
     </br>
 
-    1-6 단계 6: 보안 그룹 구성  
+    <b>1-6 단계 6: 보안 그룹 구성</b>  
     <img src="./image_path/aws_docker6.png" width="600px" height="300px" title="aws_docker6" alt="aws_docker6"></img>  
     - 새 보안 그룹 생성
     - 보안 그룹 이름 : <b>DOCKER_SG</b> (원하는대로 설정 가능)  
     - 검토 및 시작 클릭  
     </br>  
 
-    1-7 단계 7: 인스턴스 시작 검토  
+    <b>1-7 단계 7: 인스턴스 시작 검토</b>  
     <img src="./image_path/aws_docker7.png" width="600px" height="300px" title="aws_docker7" alt="aws_docker7"></img>  
     - 시작하기 클릭  
+    - <b>.pem key가 없다면 새로운 pem key 생성</b>  
+    </br>     
+
+   
+2. EC2 인스턴스 접속  
+    
+    <b>2-1 EC2 인스턴스 상태 확인 </b>  
+    <img src="./image_path/aws_docker9.png" width="600px" height="300px" title="aws_docker9" alt="aws_docker9"></img>  
+    - 인스턴스 상태, 상태 검사가 사진과 같은 모습인지 확인  
+    - 그렇지 않다면 조금 더 기다린다  
     </br>  
 
-2. EC2 인스턴스 접속
+    <b>2-2 EC2 인스턴스 연결(1)</b>  
+    <img src="./image_path/aws_docker10.png" width="600px" height="300px" title="aws_docker10" alt="aws_docker10"></img>  
+    - 우클릭 후 <b>연결</b> 클릭
+    </br>  
+
+    <b>2-3 EC2 인스턴스 연결(2)</b>  
+    <img src="./image_path/aws_docker11.png" width="600px" height="300px" title="aws_docker11" alt="aws_docker11"></img>  
+    </br>  
+
+    <b>2-4 uname -a 명령어 확인</b>  
+    <img src="./image_path/aws_docker12.png" width="600px" height="100px" title="aws_docker12" alt="aws_docker12"></img>
+     ```
+    $ uname -a
+    위 명령어로 올바른 주소인지 확인한다.
+    ```
 
 
 3. Docker 환경 구축
