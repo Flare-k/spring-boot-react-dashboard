@@ -19,7 +19,7 @@
 - 기존의 가상환경은 Host OS 위에 추상화된 HW와 Guest OS를 올렸는데, 이렇게 되면 매우 무겁다. 
 - 이 부분을 컨테이너화하는 아이디어가 나오게 된 것이다.  
  
-<br/><br/>
+<br/>
 
 ## 1.2 Docker
 
@@ -41,8 +41,9 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 이미지 : 필요한 프로그램과 라이브러리, 소스를 설치한 뒤 만든 하나의 파일
 컨테이너 : 이미지를 격리하여 독립된 공간에서 실행한 가상 환경
 ```
-<img src="./image_path/cloud.png" width="450px" height="300px" title="Cloud" alt="Cloud"></img><br/>
-<br/><br/>
+<img src="./image_path/cloud.png" width="450px" height="300px" title="Cloud" alt="Cloud"></img>
+
+<br/>
 
 ## 1.3 Container
 > 컨테이너란 (Container)?
@@ -55,15 +56,15 @@ Docker는 다양한 클라우드 서비스 모델과 같이 사용 가능하다.
 
 >기존의 VM 사용방식처럼 Hypervisor 위에 올려 사용한다면 동일 시스템에서 실행하는 소프트웨어의 컴포넌트가 충돌하거나 다양한 종속성을 갖는다.  
 >컨테이너는 가상머신을 사용해 각 Micro Service를 격리(isolate)하는 기술이다. 가상머신처럼 하드웨어를 전부 구현하는 것은 아니기 때문에 매우 빠른 실행이 가능하다.
-<br/><br/>
+
+<br/>
 
 ## 1.4 Container vs. Virtual Machine 
 
 > 그렇다면 Container와 VM의 성능 차이는 얼마나 날까?
 
 
-
-<br/><br/>
+<br/>
 
 ## 1.5 컨테이너를 격리하는 기술
 <br/>
@@ -121,6 +122,13 @@ Scale-out: 기존의 서버와 같은 사양 또는 비슷한 사양의 서버 대수를 증가시키는 방�
 > ### Scaling  
 > 스케일링 역시 간편하다. Monolith였다면 필요없는 기능까지 다같이 스케일링이 되므로 비효율적이다.  
 하지만 Micro Service는 스케일링이 필요한 기능만 할 수 있으므로 더 경제적이고 효율적이다.
+
+</br>
+
+[뒤로가기](/Docker/README.md)  
+
+</br>
+
 
 ---------------------------------------
 
