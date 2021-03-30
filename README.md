@@ -2,6 +2,7 @@
 
 - ### [Docker](./Docker)
     - [1. Docker Intro](./Docker/DockerIntro.md)  
-    - [2. Docker 설치하기 with AWS](./Docker/DockerInstall.md)  
+    - [2. To install Docker on an Amazon EC2 instance](./Docker/DockerInstall.md)  
+    - 
 
 - ### [Kubernetes](./Kubernetes)
