@@ -1,16 +1,18 @@
-# 4. Docker Life cycle ÀÌÇØ¿Í ¸í·É¾î ½Ç½À  
+# 4. Docker Life cycle ì´í•´ì™€ ëª…ë ¹ì–´ ì‹¤ìŠµ
+  
 
 <br/>
 
-## 4.1 Docker Life cycle ÀÌÇØÇÏ±â
+## 4.1 Docker Life cycle ì´í•´í•˜ê¸°
 <img src="./image_path/dockerLifeCycle.png" width="600px" height="300px" title="Docker Life Cycle" alt="dockerLifeCycle"></img>  
 
 
 <br/><br/>
 
-## 4.2 Docker Life cycle ¸í·É¾î ½Ç½À  
+## 4.2 Docker Life cycle ëª…ë ¹ì–´ ì‹¤ìŠµ  
 
-<b>4.2.1 Docker ÀÌ¹ÌÁö ´Ù¿î·Îµå¿Í »èÁ¦</b>  
+<b>4.2.1 Docker ì´ë¯¸ì§€ ë‹¤ìš´ë¡œë“œì™€ ì‚­ì œ</b>  
+
 ```
 $ sudo docker pull consol/tomcat-7.0
 Using default tag: latest   
@@ -23,16 +25,18 @@ $ sudo docker rmi consol/tomcat-7.0
 
 <br/>
 
-<b>4.2.2 Tomcat ÄÁÅ×ÀÌ³Ê »ı¼º ¹× ½ÇÇà</b>  
+<b>4.2.2 Tomcat ì»¨í…Œì´ë„ˆ ìƒì„± ë° ì‹¤í–‰</b>
+
 ```
-$ sudo docker run -d --name <»ç¿ëÀÚÁöÁ¤ Container Name> tomcat
+$ sudo docker run -d --name <ì‚¬ìš©ìì§€ì • Container Name> tomcat
 ```
-run ¸í·ÉÀº create¿Í start°¡ Æ÷ÇÔµÇ¾î ÀÖ´Ù. µû¶ó¼­ »ı¼º°ú µ¿½Ã¿¡ ½ÇÇàÀÌ ¿Ï·áµÈ´Ù.
+run ëª…ë ¹ì€ createì™€ startê°€ í¬í•¨ë˜ì–´ ìˆë‹¤. ë”°ë¼ì„œ ìƒì„±ê³¼ ë™ì‹œì— ì‹¤í–‰ì´ ì™„ë£Œëœë‹¤.
 
 <br/>
 
 
-<b>4.2.3 ½ÇÇà ÁßÀÎ ÄÁÅ×ÀÌ³Ê È®ÀÎ</b>  
+<b>4.2.3 ì‹¤í–‰ ì¤‘ì¸ ì»¨í…Œì´ë„ˆ í™•ì¸</b>  
+
 ```
 $ sudo docker ps
 
@@ -43,7 +47,7 @@ e9ef7e6c9732   tomcat "catalina.sh run"   17 seconds ago    Up 11 seconds     80
 <br/>
 
 
-<b>4.2.4 ¸ğµç ÄÁÅ×ÀÌ³Ê È®ÀÎ</b>  
+<b>4.2.4 ëª¨ë“  ì»¨í…Œì´ë„ˆ í™•ì¸</b>  
 ```
 $ sudo docker ps -a
 ```
@@ -51,7 +55,8 @@ $ sudo docker ps -a
 <br/>
 
 
-<b>4.2.5 ÄÁÅ×ÀÌ³Ê ÁßÁö</b>  
+<b>4.2.5 ì»¨í…Œì´ë„ˆ ì¤‘ì§€</b>  
+
 ```
 $ sudo docker stop <Container ID>
 ```
@@ -59,11 +64,12 @@ $ sudo docker stop <Container ID>
 <br/>
 
 
-<b>4.2.6 ÄÁÅ×ÀÌ³Ê »èÁ¦</b>  
+<b>4.2.6 ì»¨í…Œì´ë„ˆ ì‚­ì œ</b>  
+
 ```
 $ sudo docker rm <Container ID>
 ```
 
 <br/>
 
-ÀÌ¹Ì ÄÁÅ×ÀÌ³Ê¿¡ ¿Ã¶ó°¡ ÀÖ´Â ÀÌ¹ÌÁö¸¦ »èÁ¦ÇÏ°í ½Í´Ù¸é ÄÁÅ×ÀÌ³Ê¸¦ ¸ÕÀú »èÁ¦ÇÏ°í ÀÌ¹ÌÁö¸¦ »èÁ¦ÇØ¾ß ÇÑ´Ù.
+ì´ë¯¸ ì»¨í…Œì´ë„ˆì— ì˜¬ë¼ê°€ ìˆëŠ” ì´ë¯¸ì§€ë¥¼ ì‚­ì œí•˜ê³  ì‹¶ë‹¤ë©´ ì»¨í…Œì´ë„ˆë¥¼ ë¨¼ì € ì‚­ì œí•˜ê³  ì´ë¯¸ì§€ë¥¼ ì‚­ì œí•´ì•¼ í•œë‹¤.

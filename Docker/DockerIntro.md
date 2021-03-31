@@ -1,108 +1,114 @@
 # 1. Docker Intro  
 <br/>
 
-## 1.1 Docker´Â ¿Ö ÇÊ¿äÇÒ±î?
+## 1.1 DockerëŠ” ì™œ í•„ìš”í• ê¹Œ?
  
- Docker´Â [ÄÁÅ×ÀÌ³Ê](#1.3-container) ±â¼úÀ» Áö¿øÇÏ´Â ´Ù¾çÇÑ ÇÁ·ÎÁ§Æ® Áß ÇÏ³ªÀÌ´Ù. ÄÁÅ×ÀÌ³Ê ±â¼úÀ» °ú°Å¿¡µµ Á¸ÀçÇßÀ¸³ª Docker¸¦ ÅëÇØ ¸¹ÀÌ ¾Ë·ÁÁö°Ô µÇ¾ú´Ù.
+ DockerëŠ” [ì»¨í…Œì´ë„ˆ](#1.3-container) ê¸°ìˆ ì„ ì§€ì›í•˜ëŠ” ë‹¤ì–‘í•œ í”„ë¡œì íŠ¸ ì¤‘ í•˜ë‚˜ì´ë‹¤. ì»¨í…Œì´ë„ˆ ê¸°ìˆ ì„ ê³¼ê±°ì—ë„ ì¡´ìž¬í–ˆìœ¼ë‚˜ Dockerë¥¼ í†µí•´ ë§Žì´ ì•Œë ¤ì§€ê²Œ ë˜ì—ˆë‹¤.
 
-±âÁ¸ÀÇ ÄÁÅ×ÀÌ³Ê ±â¼úÀº »ç¿ëÀÚÀÇ OS È¯°æ¿¡ µû¶ó ±× ³»¿ëÀÌ³ª ¸í·É¾îÀÇ ³»¿ë µîÀÌ »óÀÌÇß´Ù. ÇÏÁö¸¸ Docker¸¦ ÀÌ¿ëÇÑ´Ù¸é È¯°æÀÇ Á¦¾àÀ» ¹ÞÁö ¾Ê°í ¿øÇÏ´Â ¾ÖÇÃ¸®ÄÉÀÌ¼ÇÀ» ½ÇÇàÇÒ ¼ö ÀÖ´Ù.
-ÄÁÅ×ÀÌ³Ê´Â ÁÖ·Î ´ë±Ô¸ð ±â¾÷, ´ë±Ô¸ð ÇÁ·ÎÁ§Æ®¿¡¼­ »ç¿ëµÈ´Ù. ¿äÁòÀº ÇÁ·ÎÁ§Æ®¸¦ ½ÃÀÛÇÒ ¶§ ¾Æ¿¹ ÄÁÅ×ÀÌ³Ê ±â¹ÝÀ¸·Î ½ÃÀÛÇÏ±âµµ ÇÑ´Ù.  
+ê¸°ì¡´ì˜ ì»¨í…Œì´ë„ˆ ê¸°ìˆ ì€ ì‚¬ìš©ìžì˜ OS í™˜ê²½ì— ë”°ë¼ ê·¸ ë‚´ìš©ì´ë‚˜ ëª…ë ¹ì–´ì˜ ë‚´ìš© ë“±ì´ ìƒì´í–ˆë‹¤. í•˜ì§€ë§Œ Dockerë¥¼ ì´ìš©í•œë‹¤ë©´ í™˜ê²½ì˜ ì œì•½ì„ ë°›ì§€ ì•Šê³  ì›í•˜ëŠ” ì• í”Œë¦¬ì¼€ì´ì…˜ì„ ì‹¤í–‰í•  ìˆ˜ ìžˆë‹¤. ì»¨í…Œì´ë„ˆëŠ” ì£¼ë¡œ ëŒ€ê·œëª¨ ê¸°ì—…, ëŒ€ê·œëª¨ í”„ë¡œì íŠ¸ì—ì„œ ì‚¬ìš©ëœë‹¤. ìš”ì¦˜ì€ í”„ë¡œì íŠ¸ë¥¼ ì‹œìž‘í•  ë•Œ ì•„ì˜ˆ ì»¨í…Œì´ë„ˆ ê¸°ë°˜ìœ¼ë¡œ ì‹œìž‘í•˜ê¸°ë„ í•œë‹¤.  
+
 </br>
->°³¹ßÆÀ vs. ¿î¿µÆÀ
 
-°³¹ßÆÀ°ú ¿î¿µÆÀÀº Àû´ëÀûÀÌ¶ó°í ¹Ù¶ó º¼ ¼öµµ ÀÖ´Ù. ¼­·ÎÀÇ ¼ºÇâÀÌ ¸Å¿ì ´Ù¸£±â ¶§¹®ÀÌ´Ù.  
+>ê°œë°œíŒ€ vs. ìš´ì˜íŒ€
 
-- °³¹ßÆÀÀº ¸Å¹ø »õ·Î¿î °ÍÀ» °³¹ßÇÏ´Âµ¥ ¹Ý¸é, ¿î¿µÆÀÀº ÀÌ·¯ÇÑ °ÍµéÀ» ¾ÈÁ¤ÀûÀ¸·Î ¿î¿µÇÏ´Â °ÍÀÌ ÃÖ¿ì¼± ¸ñÇ¥ÀÌ´Ù.
-- °³¹ßÆÀÀº ¾öÃ» ¸¹Àº ÆÀµéÀÌ Á¸ÀçÇÒ ¼ö ÀÖ´Âµ¥ ¿î¿µÆÀÀº ÀÌ ¸ðµç ÆÀµéÀ» ¼ö¿ëÇÏ±â Èûµé´Ù.  
+ê°œë°œíŒ€ê³¼ ìš´ì˜íŒ€ì€ ì ëŒ€ì ì´ë¼ê³  ë°”ë¼ ë³¼ ìˆ˜ë„ ìžˆë‹¤. ì„œë¡œì˜ ì„±í–¥ì´ ë§¤ìš° ë‹¤ë¥´ê¸° ë•Œë¬¸ì´ë‹¤.  
 
-±×·¡¼­ º¸Åë °¡»óÈ¯°æÀÌ¶ó´Â °ÍÀ» »ç¿ëÇÑ´Ù. °¡»óÈ¯°æÀ» ¸¸µé¾î³õÀ¸¸é ¿î¿µÆÀÀº ¿î¿µÇÏ±â°¡ ¸Å¿ì ¼ö¿ùÇØÁø´Ù. 
-- ±âÁ¸ÀÇ °¡»óÈ¯°æÀº Host OS À§¿¡ Ãß»óÈ­µÈ HW¿Í Guest OS¸¦ ¿Ã·È´Âµ¥, ÀÌ·¸°Ô µÇ¸é ¸Å¿ì ¹«°Ì´Ù. 
-- ÀÌ ºÎºÐÀ» ÄÁÅ×ÀÌ³ÊÈ­ÇÏ´Â ¾ÆÀÌµð¾î°¡ ³ª¿À°Ô µÈ °ÍÀÌ´Ù.  
+- ê°œë°œíŒ€ì€ ë§¤ë²ˆ ìƒˆë¡œìš´ ê²ƒì„ ê°œë°œí•˜ëŠ”ë° ë°˜ë©´, ìš´ì˜íŒ€ì€ ì´ëŸ¬í•œ ê²ƒë“¤ì„ ì•ˆì •ì ìœ¼ë¡œ ìš´ì˜í•˜ëŠ” ê²ƒì´ ìµœìš°ì„  ëª©í‘œì´ë‹¤.
+- ê°œë°œíŒ€ì€ ì—„ì²­ ë§Žì€ íŒ€ë“¤ì´ ì¡´ìž¬í•  ìˆ˜ ìžˆëŠ”ë° ìš´ì˜íŒ€ì€ ì´ ëª¨ë“  íŒ€ë“¤ì„ ìˆ˜ìš©í•˜ê¸° íž˜ë“¤ë‹¤.  
+
+ê·¸ëž˜ì„œ ë³´í†µ ê°€ìƒí™˜ê²½ì´ë¼ëŠ” ê²ƒì„ ì‚¬ìš©í•œë‹¤. ê°€ìƒí™˜ê²½ì„ ë§Œë“¤ì–´ë†“ìœ¼ë©´ ìš´ì˜íŒ€ì€ ìš´ì˜í•˜ê¸°ê°€ ë§¤ìš° ìˆ˜ì›”í•´ì§„ë‹¤. 
+- ê¸°ì¡´ì˜ ê°€ìƒí™˜ê²½ì€ Host OS ìœ„ì— ì¶”ìƒí™”ëœ HWì™€ Guest OSë¥¼ ì˜¬ë ¸ëŠ”ë°, ì´ë ‡ê²Œ ë˜ë©´ ë§¤ìš° ë¬´ê²ë‹¤. 
+- ì´ ë¶€ë¶„ì„ ì»¨í…Œì´ë„ˆí™”í•˜ëŠ” ì•„ì´ë””ì–´ê°€ ë‚˜ì˜¤ê²Œ ëœ ê²ƒì´ë‹¤.
+  
  
 <br/>
 
 ## 1.2 Docker
 
-Docker´Â ÄÁÅ×ÀÌ³Ê ±â¼úÀÇ »ç½Ç»ó Ç¥ÁØÀÌ µÇ¾ú´Ù. Linux, Windows, Mac OS µî ´Ù¾çÇÑ ¿î¿µÃ¼Á¦¿¡¼­ »ç¿ë °¡´ÉÇÏ¸ç ¾ÖÇÃ¸®ÄÉÀÌ¼Ç¿¡ ±¹ÇÑµÇÁö ¾Ê°í ÀÇÁ¸ ¹× ÆÄÀÏ ½Ã½ºÅÛ±îÁö ÆÐÅ°Â¡ÇÏ¿© ºôµå, ¹èÆ÷ ½ÇÇàÀ» ´Ü¼øÈ­ÇÏ¿´´Ù.
+DockerëŠ” ì»¨í…Œì´ë„ˆ ê¸°ìˆ ì˜ ì‚¬ì‹¤ìƒ í‘œì¤€ì´ ë˜ì—ˆë‹¤. Linux, Windows, Mac OS ë“± ë‹¤ì–‘í•œ ìš´ì˜ì²´ì œì—ì„œ ì‚¬ìš© ê°€ëŠ¥í•˜ë©° ì• í”Œë¦¬ì¼€ì´ì…˜ì— êµ­í•œë˜ì§€ ì•Šê³  ì˜ì¡´ ë° íŒŒì¼ ì‹œìŠ¤í…œê¹Œì§€ íŒ¨í‚¤ì§•í•˜ì—¬ ë¹Œë“œ, ë°°í¬ ì‹¤í–‰ì„ ë‹¨ìˆœí™”í•˜ì˜€ë‹¤.  
 
-LinuxÀÇ Namespace¿Í cgroups¿Í °°Àº Ä¿³Î ±â´ÉÀ» »ç¿ëÇÏ¿© °¡»óÈ­°¡ °¡´ÉÇÏ´Ù.
+Linuxì˜ Namespaceì™€ cgroupsì™€ ê°™ì€ ì»¤ë„ ê¸°ëŠ¥ì„ ì‚¬ìš©í•˜ì—¬ ê°€ìƒí™”ê°€ ê°€ëŠ¥í•˜ë‹¤.
 
 </br>
 
 ```
 Linux Namespace?
-Linux Namespace´Â ÇÁ·Î¼¼½º¸¦ ½ÇÇàÇÒ ¶§ ½Ã½ºÅÛÀÇ ¸®¼Ò½º¸¦ ºÐ¸®ÇØ ½ÇÇàÇÒ ¼ö ÀÖµµ·Ï µµ¿ÍÁÖ´Â ±â´ÉÀÌ´Ù.
-ÇÑ ½Ã½ºÅÛÀÇ ÇÁ·Î¼¼½ºµéÀº ±âº»ÀûÀ¸·Î ½Ã½ºÅÛÀÇ ¸®¼Ò½º¸¦ °øÀ¯ÇØ¼­ ½ÇÇàµÇ´Âµ¥ ÀÌ¸¦ ´ÜÀÏ Linux Namespace¶ó º¼ ¼ö ÀÖ´Ù.
-Linux¿¡¼­´Â 1¹ø ÇÁ·Î¼¼½º(init)¿¡ ÇÒ´çµÅ ÀÖ´Â NamespaceµéÀ» ÀÚ½Ä ÇÁ·Î¼¼½ºµéÀÌ ¸ðµÎ °øÀ¯ÇØ¼­ »ç¿ëÇÏ´Â ±¸Á¶·Î ÀÌ·ç¾îÁ®ÀÖ´Ù.
+Linux NamespaceëŠ” í”„ë¡œì„¸ìŠ¤ë¥¼ ì‹¤í–‰í•  ë•Œ ì‹œìŠ¤í…œì˜ ë¦¬ì†ŒìŠ¤ë¥¼ ë¶„ë¦¬í•´ ì‹¤í–‰í•  ìˆ˜ ìžˆë„ë¡ ë„ì™€ì£¼ëŠ” ê¸°ëŠ¥ì´ë‹¤.
+í•œ ì‹œìŠ¤í…œì˜ í”„ë¡œì„¸ìŠ¤ë“¤ì€ ê¸°ë³¸ì ìœ¼ë¡œ ì‹œìŠ¤í…œì˜ ë¦¬ì†ŒìŠ¤ë¥¼ ê³µìœ í•´ì„œ ì‹¤í–‰ë˜ëŠ”ë° ì´ë¥¼ ë‹¨ì¼ Linux Namespaceë¼ ë³¼ ìˆ˜ ìžˆë‹¤.
+Linuxì—ì„œëŠ” 1ë²ˆ í”„ë¡œì„¸ìŠ¤(init)ì— í• ë‹¹ë¼ ìžˆëŠ” Namespaceë“¤ì„ ìžì‹ í”„ë¡œì„¸ìŠ¤ë“¤ì´ ëª¨ë‘ ê³µìœ í•´ì„œ ì‚¬ìš©í•˜ëŠ” êµ¬ì¡°ë¡œ ì´ë£¨ì–´ì ¸ìžˆë‹¤.
 ```
 
-Docker´Â ´Ù¾çÇÑ Å¬¶ó¿ìµå ¼­ºñ½º ¸ðµ¨°ú °°ÀÌ »ç¿ë °¡´ÉÇÏ´Ù. 
+DockerëŠ” ë‹¤ì–‘í•œ í´ë¼ìš°ë“œ ì„œë¹„ìŠ¤ ëª¨ë¸ê³¼ ê°™ì´ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤.  
+
 ```
-ÀÌ¹ÌÁö : ÇÊ¿äÇÑ ÇÁ·Î±×·¥°ú ¶óÀÌºê·¯¸®, ¼Ò½º¸¦ ¼³Ä¡ÇÑ µÚ ¸¸µç ÇÏ³ªÀÇ ÆÄÀÏ
-ÄÁÅ×ÀÌ³Ê : ÀÌ¹ÌÁö¸¦ °Ý¸®ÇÏ¿© µ¶¸³µÈ °ø°£¿¡¼­ ½ÇÇàÇÑ °¡»ó È¯°æ
+ì´ë¯¸ì§€ : í•„ìš”í•œ í”„ë¡œê·¸ëž¨ê³¼ ë¼ì´ë¸ŒëŸ¬ë¦¬, ì†ŒìŠ¤ë¥¼ ì„¤ì¹˜í•œ ë’¤ ë§Œë“  í•˜ë‚˜ì˜ íŒŒì¼
+ì»¨í…Œì´ë„ˆ : ì´ë¯¸ì§€ë¥¼ ê²©ë¦¬í•˜ì—¬ ë…ë¦½ëœ ê³µê°„ì—ì„œ ì‹¤í–‰í•œ ê°€ìƒ í™˜ê²½
+
 ```
 <img src="./image_path/cloud.png" width="450px" height="300px" title="Cloud" alt="Cloud"></img>
 
 <br/>
 
 ## 1.3 Container
-> ÄÁÅ×ÀÌ³Ê¶õ (Container)?
+> ì»¨í…Œì´ë„ˆëž€ (Container)?
 
-ÄÁÅ×ÀÌ³Ê´Â ¾ÖÇÃ¸®ÄÉÀÌ¼ÇÀ» ½ÇÁ¦ ±¸µ¿ È¯°æÀ¸·ÎºÎÅÍ Ãß»óÈ­ÇÒ ¼ö ÀÖ´Â ³í¸® ÆÐÅ°Â¡ ¸ÅÄ¿´ÏÁòÀ» Á¦°øÇÑ´Ù.  
-Áï, È£½ºÆ® OS¿¡¼­ ±¸µ¿µÇ¸ç ÇÏµå¿þ¾î¿¡¼­ °¡»óÀ¸·Î ¾×¼¼½ºÇÏ´Â Linux, Windows µîÀÇ °Ô½ºÆ® OS¸¦ ÀÇ¹ÌÇÑ´Ù.  
+ì»¨í…Œì´ë„ˆëŠ” ì• í”Œë¦¬ì¼€ì´ì…˜ì„ ì‹¤ì œ êµ¬ë™ í™˜ê²½ìœ¼ë¡œë¶€í„° ì¶”ìƒí™”í•  ìˆ˜ ìžˆëŠ” ë…¼ë¦¬ íŒ¨í‚¤ì§• ë§¤ì»¤ë‹ˆì¦˜ì„ ì œê³µí•œë‹¤.  
+ì¦‰, í˜¸ìŠ¤íŠ¸ OSì—ì„œ êµ¬ë™ë˜ë©° í•˜ë“œì›¨ì–´ì—ì„œ ê°€ìƒìœ¼ë¡œ ì•¡ì„¸ìŠ¤í•˜ëŠ” Linux, Windows ë“±ì˜ ê²ŒìŠ¤íŠ¸ OSë¥¼ ì˜ë¯¸í•œë‹¤.  
 
-´õ ½±°Ô ¸»ÇÏÀÚ¸é, È£½ºÆ® OSÀ§¿¡ ÄÁÅ×ÀÌ³Ê °ü¸® ¼ÒÇÁÆ®¿þ¾î¸¦ ¸¸µé°í ±× À§¿¡ ÄÁÅ×ÀÌ³Ê¸¦ ¿Ã¸°´Ù.  
-ÀÌ ÄÁÅ×ÀÌ³Ê´Â ¾îÇÃ¸®ÄÉÀÌ¼ÇÀ» ÀÛµ¿½ÃÅ°±â À§ÇØ ÇÊ¿äÇÑ ¶óÀÌºê·¯¸®, ¾îÇÃ¸®ÄÉÀÌ¼Ç µîÀ» ¸ð¾Æ º°µµÀÇ ¼­¹öÃ³·³ »ç¿ë °¡´ÉÇÏ°Ô ¸¸µç °ÍÀÌ´Ù.
+ë” ì‰½ê²Œ ë§í•˜ìžë©´, í˜¸ìŠ¤íŠ¸ OSìœ„ì— ì»¨í…Œì´ë„ˆ ê´€ë¦¬ ì†Œí”„íŠ¸ì›¨ì–´ë¥¼ ë§Œë“¤ê³  ê·¸ ìœ„ì— ì»¨í…Œì´ë„ˆë¥¼ ì˜¬ë¦°ë‹¤.  
+ì´ ì»¨í…Œì´ë„ˆëŠ” ì–´í”Œë¦¬ì¼€ì´ì…˜ì„ ìž‘ë™ì‹œí‚¤ê¸° ìœ„í•´ í•„ìš”í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬, ì–´í”Œë¦¬ì¼€ì´ì…˜ ë“±ì„ ëª¨ì•„ ë³„ë„ì˜ ì„œë²„ì²˜ëŸ¼ ì‚¬ìš© ê°€ëŠ¥í•˜ê²Œ ë§Œë“  ê²ƒì´ë‹¤.
 
->±âÁ¸ÀÇ VM »ç¿ë¹æ½ÄÃ³·³ Hypervisor À§¿¡ ¿Ã·Á »ç¿ëÇÑ´Ù¸é µ¿ÀÏ ½Ã½ºÅÛ¿¡¼­ ½ÇÇàÇÏ´Â ¼ÒÇÁÆ®¿þ¾îÀÇ ÄÄÆ÷³ÍÆ®°¡ Ãæµ¹ÇÏ°Å³ª ´Ù¾çÇÑ Á¾¼Ó¼ºÀ» °®´Â´Ù.  
->ÄÁÅ×ÀÌ³Ê´Â °¡»ó¸Ó½ÅÀ» »ç¿ëÇØ °¢ Micro Service¸¦ °Ý¸®(isolate)ÇÏ´Â ±â¼úÀÌ´Ù. °¡»ó¸Ó½ÅÃ³·³ ÇÏµå¿þ¾î¸¦ ÀüºÎ ±¸ÇöÇÏ´Â °ÍÀº ¾Æ´Ï±â ¶§¹®¿¡ ¸Å¿ì ºü¸¥ ½ÇÇàÀÌ °¡´ÉÇÏ´Ù.
+>ê¸°ì¡´ì˜ VM ì‚¬ìš©ë°©ì‹ì²˜ëŸ¼ Hypervisor ìœ„ì— ì˜¬ë ¤ ì‚¬ìš©í•œë‹¤ë©´ ë™ì¼ ì‹œìŠ¤í…œì—ì„œ ì‹¤í–‰í•˜ëŠ” ì†Œí”„íŠ¸ì›¨ì–´ì˜ ì»´í¬ë„ŒíŠ¸ê°€ ì¶©ëŒí•˜ê±°ë‚˜ ë‹¤ì–‘í•œ ì¢…ì†ì„±ì„ ê°–ëŠ”ë‹¤.  
+>ì»¨í…Œì´ë„ˆëŠ” ê°€ìƒë¨¸ì‹ ì„ ì‚¬ìš©í•´ ê° Micro Serviceë¥¼ ê²©ë¦¬(isolate)í•˜ëŠ” ê¸°ìˆ ì´ë‹¤. ê°€ìƒë¨¸ì‹ ì²˜ëŸ¼ í•˜ë“œì›¨ì–´ë¥¼ ì „ë¶€ êµ¬í˜„í•˜ëŠ” ê²ƒì€ ì•„ë‹ˆê¸° ë•Œë¬¸ì— ë§¤ìš° ë¹ ë¥¸ ì‹¤í–‰ì´ ê°€ëŠ¥í•˜ë‹¤.
+
 
 <br/>
 
 ## 1.4 Container vs Virtual Machine 
 
-> ±×·¸´Ù¸é Container¿Í VMÀÇ ¼º´É Â÷ÀÌ´Â ¾ó¸¶³ª ³¯±î?
-
+> ê·¸ë ‡ë‹¤ë©´ Containerì™€ VMì˜ ì„±ëŠ¥ ì°¨ì´ëŠ” ì–¼ë§ˆë‚˜ ë‚ ê¹Œ?
 
 <br/>
 
-## 1.5 ÄÁÅ×ÀÌ³Ê¸¦ °Ý¸®ÇÏ´Â ±â¼ú
+## 1.5 ì»¨í…Œì´ë„ˆë¥¼ ê²©ë¦¬í•˜ëŠ” ê¸°ìˆ 
+
 <br/>
 
-* Linux Namespace : °¢ ÇÁ·Î¼¼½º°¡ ÆÄÀÏ ½Ã½ºÅÛ ¸¶¿îÆ®, ³×Æ®¿öÅ©, À¯Àú(uid), È£½ºÆ® ³×ÀÓ(uts) µî¿¡ ´ëÇØ ½Ã½ºÅÛ¿¡ µ¶¸³ ºä¸¦ Á¦°øÇÑ´Ù.  
-    * ÆÄÀÏÀÌ³ª ³×Æ®¿öÅ© ÀÎÅÍÆäÀÌ½º¸¦ °¡»óÈ­ÇØ¼­ º»ÀÎ¸¸ÀÇ °ÍÀ» °¡Áú ¼ö ÀÖ´Ù.  
+* Linux Namespace : ê° í”„ë¡œì„¸ìŠ¤ê°€ íŒŒì¼ ì‹œìŠ¤í…œ ë§ˆìš´íŠ¸, ë„¤íŠ¸ì›Œí¬, ìœ ì €(uid), í˜¸ìŠ¤íŠ¸ ë„¤ìž„(uts) ë“±ì— ëŒ€í•´ ì‹œìŠ¤í…œì— ë…ë¦½ ë·°ë¥¼ ì œê³µí•œë‹¤.  
+    * íŒŒì¼ì´ë‚˜ ë„¤íŠ¸ì›Œí¬ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ê°€ìƒí™”í•´ì„œ ë³¸ì¸ë§Œì˜ ê²ƒì„ ê°€ì§ˆ ìˆ˜ ìžˆë‹¤.  
 
-* Linux Control Group(cgroup) : ÇÁ·Î¼¼½º·Î ¼ÒºñÇÒ ¼ö ÀÖ´Â ¸®¼Ò½º ¾çÀ» Á¦ÇÑÇÑ´Ù.  
-(¸®¼Ò½º ¾ç = CPU, Memory, I/O, ³×Æ®¿öÅ© ´ë¿ª´ë, Device Node µî..)  
-    * cgroupÀº ±âº»ÀûÀ¸·Î Linux¿¡ Å¾ÀçµÈ ±â´ÉÀÌ´Ù. µû¶ó¼­ Docker´Â Linux¿¡¼­ °¡»óÈ­¸¦ ÀÌ·ïÁØ´Ù.  
-    * Docker°¡ ¸¸¾à Windows¿¡ ¼³Ä¡µÈ´Ù¸é? Hyber Visor¸¦ »ç¿ëÇÑ´Ù.
+* Linux Control Group(cgroup) : í”„ë¡œì„¸ìŠ¤ë¡œ ì†Œë¹„í•  ìˆ˜ ìžˆëŠ” ë¦¬ì†ŒìŠ¤ ì–‘ì„ ì œí•œí•œë‹¤.  
+(ë¦¬ì†ŒìŠ¤ ì–‘ = CPU, Memory, I/O, ë„¤íŠ¸ì›Œí¬ ëŒ€ì—­ëŒ€, Device Node ë“±..)  
+    * cgroupì€ ê¸°ë³¸ì ìœ¼ë¡œ Linuxì— íƒ‘ìž¬ëœ ê¸°ëŠ¥ì´ë‹¤. ë”°ë¼ì„œ DockerëŠ” Linuxì—ì„œ ê°€ìƒí™”ë¥¼ ì´ë¤„ì¤€ë‹¤.  
+    * Dockerê°€ ë§Œì•½ Windowsì— ì„¤ì¹˜ëœë‹¤ë©´? Hyber Visorë¥¼ ì‚¬ìš©í•œë‹¤.  
 
 <br/><br/>
 
-## 1.6 DockerÀÇ ÇÑ°è
-> Limit of Docker
+## 1.6 Dockerì˜ í•œê³„
 
-- Docker¸¦ »ç¿ëÇØ °ü¸®ÇÏ´õ¶óµµ ½±Áö ¾ÊÀº ÇüÅÂ ¹èÆ÷ ¹× ÄÁÅ×ÀÌ³Ê ¹èÄ¡ Àü·« Scale-up, Scale-outÀÌ ½±Áö ¾Ê´Ù.  
-- Docker¸¦ ½Ç½Ã°£À¸·Î ±Û·Î¹úÇÑ Æ®·¡ÇÈÀ» °¨´çÇÒ ¼ö ÀÖ°Ô »ç¿ëÇÏ·Á¸é ¸ÖÆ¼ È£½ºÆ®¿¡ Docker¸¦ »ç¿ëÇØ¾ß ÇÑ´Ù.  
-- ±×·¸´Ù¸é ¿©·¯ ´ëÀÇ ¼­¹ö¿¡¼­ ÄÁÅ×ÀÌ³Ê¸¦ °ü¸®ÇÑ´Ù¸é ³×Æ®¿öÅ© »óÀ¸·Îµµ ½±Áö ¾ÊÀ» °ÍÀÌ´Ù.  
-- ÀÌ¸¦ À§ÇØ ¸¹Àº ¿ÀÄÉ½ºÆ®·¹ÀÌ¼Ç Á¦Ç°µéÀÌ ³ª¿À°Ô µÆ´Ù. ±× Áß ÇÏ³ª°¡ ¹Ù·Î KubernetesÀÌ´Ù.
+- Dockerë¥¼ ì‚¬ìš©í•´ ê´€ë¦¬í•˜ë”ë¼ë„ ì‰½ì§€ ì•Šì€ í˜•íƒœ ë°°í¬ ë° ì»¨í…Œì´ë„ˆ ë°°ì¹˜ ì „ëžµ Scale-up, Scale-outì´ ì‰½ì§€ ì•Šë‹¤.  
+- Dockerë¥¼ ì‹¤ì‹œê°„ìœ¼ë¡œ ê¸€ë¡œë²Œí•œ íŠ¸ëž˜í”½ì„ ê°ë‹¹í•  ìˆ˜ ìžˆê²Œ ì‚¬ìš©í•˜ë ¤ë©´ ë©€í‹° í˜¸ìŠ¤íŠ¸ì— Dockerë¥¼ ì‚¬ìš©í•´ì•¼ í•œë‹¤.  
+- ê·¸ë ‡ë‹¤ë©´ ì—¬ëŸ¬ ëŒ€ì˜ ì„œë²„ì—ì„œ ì»¨í…Œì´ë„ˆë¥¼ ê´€ë¦¬í•œë‹¤ë©´ ë„¤íŠ¸ì›Œí¬ ìƒìœ¼ë¡œë„ ì‰½ì§€ ì•Šì„ ê²ƒì´ë‹¤.  
+- ì´ë¥¼ ìœ„í•´ ë§Žì€ ì˜¤ì¼€ìŠ¤íŠ¸ë ˆì´ì…˜ ì œí’ˆë“¤ì´ ë‚˜ì˜¤ê²Œ ëë‹¤. ê·¸ ì¤‘ í•˜ë‚˜ê°€ ë°”ë¡œ Kubernetesì´ë‹¤.
+
+
 ```
-Scale-up : ±âÁ¸ÀÇ ¼­¹ö¿¡¼­ ´õ¿í °í¼º´ÉÀÇ ¼­¹ö·Î º¯°æÇÏ´Â °Í
+Scale-up : ê¸°ì¡´ì˜ ì„œë²„ì—ì„œ ë”ìš± ê³ ì„±ëŠ¥ì˜ ì„œë²„ë¡œ ë³€ê²½í•˜ëŠ” ê²ƒ
 
-> ´ÜÁ¡
-- ½ºÅä¸®Áö ÄÁÆ®·Ñ·¯ÀÇ È®Àå¼º ÇÑ°èÀÇ ¹®Á¦
-- ¼º´É ±×¸®°í ¿ë·® È®Àå Á¦ÇÑ¿¡ ´Ù´Ù¸¥ °æ¿ì, 
-  »õ ½Ã½ºÅÛÀ» Ãß°¡ÇØ¾ßµÇ´Âµ¥ ÀÌ¶§ ¹ß»ýÇÏ´Â ¸¶ÀÌ±×·¹ÀÌ¼Ç ºñ¿ë
+> ë‹¨ì 
+- ìŠ¤í† ë¦¬ì§€ ì»¨íŠ¸ë¡¤ëŸ¬ì˜ í™•ìž¥ì„± í•œê³„ì˜ ë¬¸ì œ
+- ì„±ëŠ¥ ê·¸ë¦¬ê³  ìš©ëŸ‰ í™•ìž¥ ì œí•œì— ë‹¤ë‹¤ë¥¸ ê²½ìš°, 
+  ìƒˆ ì‹œìŠ¤í…œì„ ì¶”ê°€í•´ì•¼ë˜ëŠ”ë° ì´ë•Œ ë°œìƒí•˜ëŠ” ë§ˆì´ê·¸ë ˆì´ì…˜ ë¹„ìš©
 
 
-Scale-out: ±âÁ¸ÀÇ ¼­¹ö¿Í °°Àº »ç¾ç ¶Ç´Â ºñ½ÁÇÑ »ç¾çÀÇ ¼­¹ö ´ë¼ö¸¦ Áõ°¡½ÃÅ°´Â ¹æ¹ýÀ¸·Î Ã³¸® ´É·ÂÀ» Çâ¼§½ÃÅ°´Â °Í
+Scale-out: ê¸°ì¡´ì˜ ì„œë²„ì™€ ê°™ì€ ì‚¬ì–‘ ë˜ëŠ” ë¹„ìŠ·í•œ ì‚¬ì–‘ì˜ ì„œë²„ ëŒ€ìˆ˜ë¥¼ ì¦ê°€ì‹œí‚¤ëŠ” ë°©ë²•ìœ¼ë¡œ ì²˜ë¦¬ ëŠ¥ë ¥ì„ í–¥ìƒ¹ì‹œí‚¤ëŠ” ê²ƒ
  
-> ´ÜÁ¡
-- º´·Ä ÄÄÇ»ÆÃÀÇ ¼³°è ¹× ±¸Çö
-- ±âº»ÀûÀ¸·Î Á÷·ÄÈ­ µÇ¾î¾ß ÇÒ ºÎºÐÀÌ Á¸Àç
-- ´ë¿ªÆø, µ¿±âÈ­ ¹®Á¦
-- ÄÚ¾î°¡ ´Ã¾î³²¿¡ µû¶ó ¸¶³É ¼º´ÉÀÌ Áõ°¡ X
-- ÄÚ¾î Áõ°¡¿¡ µû¶ó ´ë¿ªÆøÀº Áõ°¡ÇØ Áö¿¬ ¹ß»ý °¡´É¼º Á¸Àç
+> ë‹¨ì 
+- ë³‘ë ¬ ì»´í“¨íŒ…ì˜ ì„¤ê³„ ë° êµ¬í˜„
+- ê¸°ë³¸ì ìœ¼ë¡œ ì§ë ¬í™” ë˜ì–´ì•¼ í•  ë¶€ë¶„ì´ ì¡´ìž¬
+- ëŒ€ì—­í­, ë™ê¸°í™” ë¬¸ì œ
+- ì½”ì–´ê°€ ëŠ˜ì–´ë‚¨ì— ë”°ë¼ ë§ˆëƒ¥ ì„±ëŠ¥ì´ ì¦ê°€ X
+- ì½”ì–´ ì¦ê°€ì— ë”°ë¼ ëŒ€ì—­í­ì€ ì¦ê°€í•´ ì§€ì—° ë°œìƒ ê°€ëŠ¥ì„± ì¡´ìž¬
 ```  
 <br/><br/>
 
@@ -111,21 +117,21 @@ Scale-out: ±âÁ¸ÀÇ ¼­¹ö¿Í °°Àº »ç¾ç ¶Ç´Â ºñ½ÁÇÑ »ç¾çÀÇ ¼­¹ö ´ë¼ö¸¦ Áõ°¡½ÃÅ°´Â ¹æ¹
 <img src="./image_path/MonolithAndMicroService.png" width="450px" height="300px" title="Monolith and Micro Service" alt="Monolith and Micro Service"></img><br/>
 
 
-> ### °ü¸®  
-> Monolith´Â ¾ÖÇÃ¸®ÄÉÀÌ¼Ç ¼­ºñ½ºµéÀ» ÇÏ³ª·Î ¹­¾î¼­ ´Ù°°ÀÌ °ü¸®Çß´Ù.  
-ÇÏÁö¸¸ ÇÑ ¹ø CompileÇÒ ¶§ ¸¹Àº ½Ã°£ÀÌ °É¸°´Ù´Â ´ÜÁ¡ÀÌ ÀÖ´Ù.  
-> ¿äÁòÀº Micro Service·Î ¸¹ÀÌ °³¹ßÇÑ´Ù.  
-°³¹ßÆÀ °³º°ÀûÀ¸·Î ¼­ºñ½º¸¦ ±¸ÃàÇÒ ¼ö ÀÖ°í ¾÷µ¥ÀÌÆ®¿¡ ÀÖ¾î¼­ ´õ °£°áÇÏ´Ù.  
-¶ÇÇÑ °¢ °³º°ÆÀº°·Î ¿øÇÏ´Â ±â¼ú, ÄÁÅ×ÀÌ³Ê¸¦ »ç¿ëÇÒ ¼ö ÀÖÀ¸¹Ç·Î ¼­·Î µ¶¸³ÀûÀÎ °³¹ßÀÌ °¡´ÉÇÏ´Ù.  
-> </br>
+> ### ê´€ë¦¬  
+> MonolithëŠ” ì• í”Œë¦¬ì¼€ì´ì…˜ ì„œë¹„ìŠ¤ë“¤ì„ í•˜ë‚˜ë¡œ ë¬¶ì–´ì„œ ë‹¤ê°™ì´ ê´€ë¦¬í–ˆë‹¤.  
+í•˜ì§€ë§Œ í•œ ë²ˆ Compileí•  ë•Œ ë§Žì€ ì‹œê°„ì´ ê±¸ë¦°ë‹¤ëŠ” ë‹¨ì ì´ ìžˆë‹¤.  
+ìš”ì¦˜ì€ Micro Serviceë¡œ ë§Žì´ ê°œë°œí•œë‹¤.  
+ê°œë°œíŒ€ ê°œë³„ì ìœ¼ë¡œ ì„œë¹„ìŠ¤ë¥¼ êµ¬ì¶•í•  ìˆ˜ ìžˆê³  ì—…ë°ì´íŠ¸ì— ìžˆì–´ì„œ ë” ê°„ê²°í•˜ë‹¤.  
+ë˜í•œ ê° ê°œë³„íŒ€ë³„ë¡œ ì›í•˜ëŠ” ê¸°ìˆ , ì»¨í…Œì´ë„ˆë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆìœ¼ë¯€ë¡œ ì„œë¡œ ë…ë¦½ì ì¸ ê°œë°œì´ ê°€ëŠ¥í•˜ë‹¤.  
+</br>
 
 > ### Scaling  
-> ½ºÄÉÀÏ¸µ ¿ª½Ã °£ÆíÇÏ´Ù. Monolith¿´´Ù¸é ÇÊ¿ä¾ø´Â ±â´É±îÁö ´Ù°°ÀÌ ½ºÄÉÀÏ¸µÀÌ µÇ¹Ç·Î ºñÈ¿À²ÀûÀÌ´Ù.  
-ÇÏÁö¸¸ Micro Service´Â ½ºÄÉÀÏ¸µÀÌ ÇÊ¿äÇÑ ±â´É¸¸ ÇÒ ¼ö ÀÖÀ¸¹Ç·Î ´õ °æÁ¦ÀûÀÌ°í È¿À²ÀûÀÌ´Ù.
+> ìŠ¤ì¼€ì¼ë§ ì—­ì‹œ ê°„íŽ¸í•˜ë‹¤. Monolithì˜€ë‹¤ë©´ í•„ìš”ì—†ëŠ” ê¸°ëŠ¥ê¹Œì§€ ë‹¤ê°™ì´ ìŠ¤ì¼€ì¼ë§ì´ ë˜ë¯€ë¡œ ë¹„íš¨ìœ¨ì ì´ë‹¤.  
+í•˜ì§€ë§Œ Micro ServiceëŠ” ìŠ¤ì¼€ì¼ë§ì´ í•„ìš”í•œ ê¸°ëŠ¥ë§Œ í•  ìˆ˜ ìžˆìœ¼ë¯€ë¡œ ë” ê²½ì œì ì´ê³  íš¨ìœ¨ì ì´ë‹¤.  
 
 </br>
 
-[µÚ·Î°¡±â](/Docker/README.md)  
+[ë’¤ë¡œê°€ê¸°](/Docker/README.md)  
 
 </br>
 
@@ -134,6 +140,6 @@ Scale-out: ±âÁ¸ÀÇ ¼­¹ö¿Í °°Àº »ç¾ç ¶Ç´Â ºñ½ÁÇÑ »ç¾çÀÇ ¼­¹ö ´ë¼ö¸¦ Áõ°¡½ÃÅ°´Â ¹æ¹
 
 ## References
 
-[ÀçÁñº¸ÇÁ](http://blog.naver.com/PostView.nhn?blogId=isc0304&logNo=221840483579&categoryNo=99&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postList&userTopListOpen=true&userTopListCount=30&userTopListManageOpen=false&userTopListCurrentPage=1)  
-[Scale-in/out ÃâÃ³: Åä¸¶ÀÇ °³¹ß³ëÆ®](https://toma0912.tistory.com/87)  
+[ìž¬ì¦ë³´í”„](http://blog.naver.com/PostView.nhn?blogId=isc0304&logNo=221840483579&categoryNo=99&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postList&userTopListOpen=true&userTopListCount=30&userTopListManageOpen=false&userTopListCurrentPage=1)  
+[Scale-in/out ì¶œì²˜: í† ë§ˆì˜ ê°œë°œë…¸íŠ¸](https://toma0912.tistory.com/87)  
 [Container - Google Cloud](https://cloud.google.com/containers?hl=ko)  

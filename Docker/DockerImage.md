@@ -1,26 +1,26 @@
-# 3. Docker¿¡¼­ ¿øÇÏ´Â ÀÌ¹ÌÁö Ã£±â
+# 3. Dockerì—ì„œ ì›í•˜ëŠ” ì´ë¯¸ì§€ ì°¾ê¸°
 
 <br/>
 
 ## 3.1 Docker Registry  
 
 <img src="./image_path/docker_registry.png" width="600px" height="300px" title="Docker Registry" alt="docker_registry"></img>  
-[±×¸² ÃâÃ³]( https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-Publishing-your-Windows-Container-images-into-a-Docker-Registry)
+[ê·¸ë¦¼ ì¶œì²˜]( https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-Publishing-your-Windows-Container-images-into-a-Docker-Registry)
 
-> Docker Registry¿¡´Â »ç¿ëÀÚ°¡ »ç¿ëÇÒ ¼ö ÀÖµµ·Ï µ¥ÀÌÅÍº£ÀÌ½º¸¦ ÅëÇØ Image¸¦ Á¦°øÇØÁÖ°í ÀÖ´Ù.  
-´©±¸³ª ÀÌ¹ÌÁö¸¦ ¸¸µé¾î PushÇÒ ¼ö ÀÖÀ¸¸ç Çª½ÃµÈ ÀÌ¹ÌÁö´Â ´Ù¸¥ »ç¶÷µé¿¡°Ô °øÀ¯ °¡´ÉÇÏ´Ù.
+> Docker Registryì—ëŠ” ì‚¬ìš©ìê°€ ì‚¬ìš©í•  ìˆ˜ ìˆë„ë¡ ë°ì´í„°ë² ì´ìŠ¤ë¥¼ í†µí•´ Imageë¥¼ ì œê³µí•´ì£¼ê³  ìˆë‹¤.  
+ëˆ„êµ¬ë‚˜ ì´ë¯¸ì§€ë¥¼ ë§Œë“¤ì–´ Pushí•  ìˆ˜ ìˆìœ¼ë©° í‘¸ì‹œëœ ì´ë¯¸ì§€ëŠ” ë‹¤ë¥¸ ì‚¬ëŒë“¤ì—ê²Œ ê³µìœ  ê°€ëŠ¥í•˜ë‹¤.  
 
-<b>Docker Registry : </b>ÀÏÁ¾ÀÇ Image ÆÄÀÏ º¸°ü¼Ò  
-<b>Images : </b>StaticÇÑ »óÅÂ·Î½á ½ÇÇàÀÌ µÉ ¼ö ¾ø´Ù.  
-<b>Container : </b>Image¸¦ ½ÇÇà½ÃÅ°±â À§ÇØ Container·Î ¹Ù²ãÁà¾ß ÇÑ´Ù.  
+<b>Docker Registry : </b>ì¼ì¢…ì˜ Image íŒŒì¼ ë³´ê´€ì†Œ  
+<b>Images : </b>Staticí•œ ìƒíƒœë¡œì¨ ì‹¤í–‰ì´ ë  ìˆ˜ ì—†ë‹¤.  
+<b>Container : </b>Imageë¥¼ ì‹¤í–‰ì‹œí‚¤ê¸° ìœ„í•´ Containerë¡œ ë°”ê¿”ì¤˜ì•¼ í•œë‹¤.  
 
 <br/>
 
-## 3.2 Docker Public Registry °Ë»ö ¹× È®ÀÎ
-[Docker hub]([https://hub.docker.com/](https://hub.docker.com/))¿¡¼­ ¾î¶² ImageµéÀÌ ÀÖ´ÂÁö È®ÀÎÇÒ ¼ö ÀÖ´Ù.  
+## 3.2 Docker Public Registry ê²€ìƒ‰ ë° í™•ì¸
+[Docker hub](https://hub.docker.com/)ì—ì„œ ì–´ë–¤ Imageë“¤ì´ ìˆëŠ”ì§€ í™•ì¸í•  ìˆ˜ ìˆë‹¤.
 
-- <b>3.2.1 Docker ¸í·É¾î·Î °Ë»ö</b>  
-    tomcat imageÀ» Ã£¾Æº¸ÀÚ
+- <b>3.2.1 Docker ëª…ë ¹ì–´ë¡œ ê²€ìƒ‰</b>  
+    tomcat imageì„ ì°¾ì•„ë³´ì
 
     ```
     $ sudo docker search tomcat
@@ -28,7 +28,7 @@
 
     <br/>
 
-- <b>3.2.2 Docker ÀÌ¹ÌÁö ´Ù¿î·ÎµåÇÏ±â</b>  
+- <b>3.2.2 Docker ì´ë¯¸ì§€ ë‹¤ìš´ë¡œë“œí•˜ê¸°</b>  
 
     ```
     $ sudo docker pull tomcat
@@ -43,7 +43,7 @@
 
     <br/>
 
-- <b>3.2.3 ·ÎÄÃ ½Ã½ºÅÛ¿¡ ÀÖ´Â Docker ÀÌ¹ÌÁö È®ÀÎÇÏ±â</b>  
+- <b>3.2.3 ë¡œì»¬ ì‹œìŠ¤í…œì— ìˆëŠ” Docker ì´ë¯¸ì§€ í™•ì¸í•˜ê¸°</b>  
 
     ```
     $ sudo docker images
@@ -53,7 +53,7 @@
 
     <br/>
 
-[µÚ·Î°¡±â](/Docker/README.md)  
+[ë’¤ë¡œê°€ê¸°](/Docker/README.md)  
 
 <br/>
 
@@ -61,4 +61,4 @@
 
 ## References
 
-[ÀçÁñº¸ÇÁ](https://www.youtube.com/channel/UCW_PO0316aD16L3IcD34wPg)  
+[ì¬ì¦ë³´í”„](https://www.youtube.com/channel/UCW_PO0316aD16L3IcD34wPg)  
